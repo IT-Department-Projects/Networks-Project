@@ -11,16 +11,17 @@ gcc raw_socket.c
 ./a.out
 ```
 
-to run the file
+## Instruction to run the file
 
-first get the interface by running ifconfig commanf in terminal
-it will give ex: enp9s8
-
+* First get the interface by running `ifconfig` command in terminal
+* It will give ex: enp9s8
+```
 sudo gcc dhcp.c -lpcap
 sudo ./a.out enp9s8
+```
 
-output:
-
+# Output:
+```
 enp9s8 MAC : 40:47:17:14:19:CA
 Sending DHCP_DISCOVERY
 dhcp.c:269:ether_output::Send 300 bytes
@@ -49,3 +50,4 @@ dhcp.c:243:ether_input::Received a frame with length of [334]
  0120 :: a8 01 01 33 04 00 01 51 80 01 04 ff ff ff 00 03 
  0130 :: 04 c0 a8 01 01 06 08 da f8 f5 09 da f8 ff 93 0f 
  0140 :: 0b 64 6f 6d 61 69 6e 2e 6e 61 6d 65 ff 00 Got IP 192.168.4.5
+```
