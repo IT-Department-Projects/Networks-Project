@@ -1,0 +1,53 @@
+
+
+***********************TCP Packet*************************
+
+Ethernet Header
+   |-Destination Address : 2C-41-38-AB-05-92 
+   |-Source Address      : 2C-41-38-AB-05-92 
+   |-Protocol            : 8 
+
+IP Header
+   |-IP Version        : 4
+   |-IP Header Length  : 5 DWORDS or 20 Bytes
+   |-Type Of Service   : 0
+   |-IP Total Length   : 57  Bytes(Size of Packet)
+   |-Identification    : 0
+   |-TTL      : 255
+   |-Protocol : 6
+   |-Checksum : 32188
+   |-Source IP        : 127.0.0.1
+   |-Destination IP   : 127.0.0.1
+
+TCP Header
+   |-Source Port      : 60
+   |-Destination Port : 80
+   |-Sequence Number    : 0
+   |-Acknowledge Number : 0
+   |-Header Length      : 5 DWORDS or 20 BYTES
+   |-Urgent Flag          : 0
+   |-Acknowledgement Flag : 1
+   |-Push Flag            : 1
+   |-Reset Flag           : 0
+   |-Synchronise Flag     : 0
+   |-Finish Flag          : 0
+   |-Window         : 65535
+   |-Checksum       : 11830
+   |-Urgent Pointer : 0
+
+                        DATA Dump                         
+IP Header
+  2C4138AB05922C4138AB059208004500        ,A8...,A8.....E.
+  00390000                                .9..
+TCP Header
+  4000FF067DBC7F0000017F000001003C        @...}........<
+  00500000                                .P..
+Data Payload
+255.255.255.255
+012
+Success MAC found130.57.64.1334
+                                                                                                    c8-5b-76-c8-d1-db.
+CRC Code
+  A3                                      .
+
+###########################################################
