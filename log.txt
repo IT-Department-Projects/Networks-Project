@@ -44,8 +44,10 @@ TCP Header
   00500000                                .P..
 Data Payload
 255.255.255.255
-012
-Success MAC found130.57.64.1334
+
+
+New Address Allocated
+130.57.66.12
                                                                                                     c8-5b-76-c8-d1-db.
 CRC Code
   A3                                      .
