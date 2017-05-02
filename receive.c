@@ -34,7 +34,7 @@ void PrintData(unsigned char*,int);
 void PrintActualPayload(unsigned char*,int);
 bool crc(void*, int, uint8_t[]);
 
-
+int count = 0;
 
 FILE *logfile;
 struct sockaddr_in source,dest;
@@ -382,13 +382,13 @@ void PrintActualPayload(unsigned char* data , int Size)
     int ip_len = strlen (ip);
     
     for(j = 0; j < ip_len; j++)
-              fprintf(logfile, "%c", (unsigned char)ip[j]);
-        fprintf(logfile, "\n");
+         fprintf(logfile, "%c", (unsigned char)ip[j]);
+    fprintf(logfile, "\n");
     
     
     strcpy(physical[0], "00-14-22-01-23-45");
 	strcpy(physical[1], "00-04-DC-01-23-45");
-	strcpy(physical[2], "c8-5b-76-c8-d1-db");
+	strcpy(physical[2], "00-03-BD-01-76-42");
 	strcpy(physical[3], "00-30-BD-01-23-45");
 	strcpy(physical[4], "00-14-22-05-64-45");
 	
@@ -406,7 +406,7 @@ void PrintActualPayload(unsigned char* data , int Size)
   for(int i = 0; i < 5; i ++) {
     if(strncmp(physical[i], data, 16) == 0) {
       flag = 1;
-      fprintf(logfile, "\nSuccess MAC found");
+      fprintf(logfile, "\nSuccess MAC found\n");
       for(int j = 0; j < 12; j++) {  
         fprintf(logfile, "%c", logical[i][j]);
       }
@@ -414,7 +414,14 @@ void PrintActualPayload(unsigned char* data , int Size)
   }
   fprintf(logfile, "\n");
 
-    
+  if(!flag) {
+    fprintf(logfile, "\nNew Address Allocated\n");
+    for(int j = 0; j < 12; j ++) {
+        fprintf(logfile, "%c", spare[0][j]);
+        count++;
+    }
+    fprintf(logfile,"\n");
+  } 
     
     int i , j, l=64;
     for(i=0 ; i < Size ; i++)
